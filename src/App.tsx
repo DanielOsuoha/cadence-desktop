@@ -29,6 +29,9 @@ function App() {
   const [wordLoading, setWordLoading] = useState(true);
   const [scenarioBusy, setScenarioBusy] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [topicIndex, setTopicIndex] = useState(0);
+  const [notes, setNotes] = useState('');
+  const topics = ['What is a small habit that has changed the way you think?', 'Pitch one change that would make your community a better place.', 'Describe a time you changed your mind. What convinced you?', 'Should teams prioritize speed or precision? Defend your position.'];
   const [setIndex, setSetIndex] = useState(0);
   const [voiceError, setVoiceError] = useState('');
   const [audioBusy, setAudioBusy] = useState(false);
@@ -52,7 +55,7 @@ function App() {
     setWordLoading(true);
     const now = new Date();
     const day = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-    return localRequest<Word>(`/api/daily-word?day=${day}`).then(value => { setWord(value); setError(''); }).catch(e => setError(e.message)).finally(() => setWordLoading(false));
+    return localRequest<Word>(`/api/daily-word?day=${day}`, { signal: AbortSignal.timeout(8000) }).then(value => { setWord(value); setError(''); }).catch(e => setError(e.message)).finally(() => setWordLoading(false));
   };
   useEffect(() => { void loadWord(); }, []);
   const analyzeWriting = async () => {
@@ -103,7 +106,7 @@ function App() {
         <div className="sidebar-footer">
           <div className="local-status">
             <span className={`status-dot ${ollamaStatus === "available" ? "is-ready" : ""}`} />
-            <span>{ollamaStatus === "available" ? "Kimi via Ollama" : ollamaStatus === "checking" ? "Checking Ollama" : "Ollama offline"}</span>
+            <span>{ollamaStatus === "available" ? "Kimi via Ollama" : ollamaStatus === "checking" ? "Checking Ollama" : "Kimi unavailable"}</span>
           </div>
           <button className="settings-button" aria-label="Connection settings" aria-expanded={settingsOpen} aria-controls="connection-settings" onClick={() => setSettingsOpen(open => !open)}>
             <Settings2 size={18} />
@@ -135,7 +138,7 @@ function App() {
                 <div>
                   <p className="eyebrow accent">Writing clarity</p>
                   <h2>Give your ideas room to breathe.</h2>
-                  <p className="muted">Build both structures from today’s word, then get a local structure check and Kimi writing feedback.</p>
+                  <p className="muted">Use today’s word in at least one sentence. Check both structures locally, then get Kimi writing feedback.</p>
                 </div>
                 <span className="local-badge"><span className="status-dot" /> Local syntax · Cloud coaching</span>
               </div>
@@ -189,7 +192,9 @@ function App() {
                 </div>
 
               </div>
-              <div className="prompt-card"><span>Today's prompt</span><strong>What is a small habit that has changed the way you think?</strong></div>
+              <div className="prompt-card"><span>Your speaking prompt</span><strong>{topics[topicIndex]}</strong><button className="secondary-button" disabled={audioBusy} onClick={() => setTopicIndex(index => (index + 1) % topics.length)}>Try another topic</button></div>
+              <label className="syntax-field" htmlFor="speaking-notes">Sketch your ideas <small> — a beginning, a point, a closing thought</small></label>
+              <textarea id="speaking-notes" className="writing-input" value={notes} onChange={event => setNotes(event.target.value)} placeholder="A few bullet points are enough…" maxLength={3000} />
               <AudioPractice onBusyChange={setAudioBusy} onComplete={() => setAudioCount(count => count + 1)} targets={word ? [word.word] : []} />
             </section>
           )}

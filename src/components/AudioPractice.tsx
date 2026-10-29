@@ -58,7 +58,7 @@ export function AudioPractice({ targets, onBusyChange, onComplete }: { targets: 
       if (mounted.current) { setError(e instanceof Error ? e.message : 'Microphone permission denied.'); setState('idle'); }
     }
   };
-  const remaining = 120 - seconds;
+  const remaining = state === 'recording' ? 120 - seconds : 120;
   return <section className="audio-practice" aria-label="Read aloud analysis">
     <div className="audio-heading">
       <div className={`record-orb ${state === 'recording' ? 'is-recording' : ''}`} aria-hidden="true"><Mic2 size={22} /></div>
