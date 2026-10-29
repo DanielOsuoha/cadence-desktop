@@ -17,6 +17,9 @@ def verify(text, kind):
     roots = [t for t in doc if t.dep_ == 'ROOT' and finite_clause(t)]
     valid = False
     if kind == 'compound':
+        parts = text.split(';')
+        if len(parts) >= 2:
+            valid = all(any(t.dep_ == 'ROOT' and finite_clause(t) for t in parser()(part.strip())) for part in parts)
         for root in roots:
             for other in doc:
                 if not finite_clause(other) or other == root:
