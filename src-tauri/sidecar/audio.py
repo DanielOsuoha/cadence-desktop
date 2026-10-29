@@ -59,6 +59,15 @@ def analyze(raw, targets):
     acoustic = POOL.submit(pitch, samples)
     words = speech.result(); metrics = acoustic.result()
     duration = len(samples) / 16000
+    # Include key recognized content words, not just the daily vocabulary target.
+    # Missing syntax resources must not disable otherwise-ready speech analysis.
+    from nlp import parser
+    try:
+        transcript_doc = parser()(' '.join(w['word'] for w in words))
+        content = [t.text.lower() for t in transcript_doc if t.pos_ in {'NOUN', 'VERB', 'ADJ'} and t.is_alpha]
+    except OSError:
+        content = []
+    targets = list(dict.fromkeys(targets + content))[:20]
     return dict(transcript=' '.join(w['word'] for w in words), words=words,
                 duration_seconds=duration, wpm=len(words)/duration*60,
                 fillers=fillers(words), pronunciation=attention_items(words, targets), **metrics)

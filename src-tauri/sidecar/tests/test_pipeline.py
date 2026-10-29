@@ -119,3 +119,10 @@ def test_cloud_account_error_keeps_syntax(monkeypatch):
  result=client.post('/api/evaluate',json={'compound':'We gather evidence, and we bolster the case.','complex':'Because we have evidence, we proceed.','word':'bolster'}).json()
  assert result['syntax']['compound']['valid']
  assert result['feedback'] is None and 'usage plan' in result['error']
+
+def test_audio_includes_content_word_targets(monkeypatch):
+ words=[dict(word='Evidence',start=0,end=.5,probability=.5),dict(word='matters.',start=.5,end=1,probability=.9)]
+ monkeypatch.setattr(audio,'transcribe',lambda samples:words)
+ monkeypatch.setattr(audio,'pitch',lambda samples:{'pitch_std_hz':None,'monotone_risk':None})
+ result=audio.analyze(wav(),[])
+ assert any(item['target']=='evidence' for item in result['pronunciation'])
