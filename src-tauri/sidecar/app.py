@@ -17,6 +17,16 @@ app.add_middleware(CORSMiddleware, allow_origins=ORIGINS, allow_methods=['GET', 
 WORDS = json.loads((Path(__file__).parent / 'data/words.json').read_text())
 AUDIO_LOCK = asyncio.Lock()
 
+def inference_error(error):
+    if isinstance(error, httpx.HTTPStatusError):
+        if error.response.status_code == 402:
+            return 'The configured Ollama model is not included in this account’s current usage plan. Select an available model or update your Ollama account. Local syntax and audio analysis remain available.'
+        if error.response.status_code in {401, 403}:
+            return 'Ollama model access denied. Check the Ollama account sign-in. Local syntax and audio analysis remain available.'
+        if error.response.status_code == 404:
+            return 'Configured Ollama model not found. Install it or select an available model.'
+    return 'Coaching unavailable. Check Ollama and the configured model connection, or retry if its JSON response was invalid.'
+
 @app.middleware('http')
 async def local_requests(request: Request, call_next):
     from starlette.responses import JSONResponse
@@ -49,8 +59,8 @@ async def scenario(day: date | None = None):
         if set(result) != {'scenario'} or not isinstance(result['scenario'], str) or not 1 <= len(result['scenario']) <= 2000:
             raise ValueError('Invalid scenario')
         return result
-    except (httpx.HTTPError, ValueError, KeyError):
-        raise HTTPException(503, 'Scenario unavailable. Check Ollama and the configured model connection; the curated word remains available.')
+    except (httpx.HTTPError, ValueError, KeyError) as error:
+        raise HTTPException(503, inference_error(error))
 
 @app.post('/api/evaluate')
 async def evaluate(submission: Submission):
@@ -68,8 +78,8 @@ async def evaluate(submission: Submission):
     try:
         feedback = await coach.evaluate({'submission': submission.model_dump(), 'normalized': normalized, 'syntax_valid': True, 'spelling_flags': flags})
         return {**base, 'feedback': feedback, 'error': None}
-    except (httpx.HTTPError, ValueError, KeyError):
-        return {**base, 'error': 'Syntax verified; coaching unavailable. Check Ollama and the configured model connection, or retry if its JSON response was invalid.'}
+    except (httpx.HTTPError, ValueError, KeyError) as error:
+        return {**base, 'error': inference_error(error)}
 
 @app.post('/api/analyze-audio')
 async def analyze_audio(request: Request):

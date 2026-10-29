@@ -109,3 +109,13 @@ def test_schema_rejects_out_of_range_and_extra_fields():
  good=dict(syntax_valid=True,word_of_day_used_correctly=True,glow='A',grow='B',american_polish='C',vocabulary_score=8)
  for bad in [{**good,'vocabulary_score':11},{**good,'syntax_valid':'true'},{**good,'unexpected':'field'}]:
   with pytest.raises(ValueError): coach.Feedback.model_validate(bad)
+
+def test_cloud_account_error_keeps_syntax(monkeypatch):
+ import httpx
+ async def denied(*args):
+  response=httpx.Response(402,request=httpx.Request('POST','http://127.0.0.1:11434/api/generate'))
+  response.raise_for_status()
+ monkeypatch.setattr(coach,'evaluate',denied)
+ result=client.post('/api/evaluate',json={'compound':'We gather evidence, and we bolster the case.','complex':'Because we have evidence, we proceed.','word':'bolster'}).json()
+ assert result['syntax']['compound']['valid']
+ assert result['feedback'] is None and 'usage plan' in result['error']
