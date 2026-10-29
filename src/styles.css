@@ -42,6 +42,18 @@ h2 { margin-bottom: 10px; font-family: "Fraunces", serif; font-size: 28px; font-
 .primary-button:hover { background: #f1d4a3; }
 .local-badge, .timer { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 6px; color: #668170; background: #e6eee7; font-family: "DM Mono", monospace; font-size: 10px; white-space: nowrap; }
 .local-badge .status-dot { width: 6px; height: 6px; box-shadow: none; }
+.word-of-day { display: flex; align-items: baseline; gap: 10px; margin: 20px 0 18px; padding: 11px 13px; border-radius: 7px; color: #77766f; background: #efebe1; font-size: 12px; }
+.word-of-day strong { color: #29443b; font-family: "Fraunces", serif; font-size: 20px; font-weight: 500; }
+.word-of-day span:last-child { color: #99958a; font-size: 11px; }
+.syntax-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+.syntax-field { display: block; color: #4a4942; font-size: 12px; font-weight: 600; }
+.syntax-field > span:first-child { display: flex; align-items: baseline; gap: 8px; }
+.syntax-field b { color: #b0aca1; font-family: "DM Mono", monospace; font-size: 10px; font-weight: 400; }
+.syntax-field small { margin-left: auto; color: #aaa69d; font-family: "DM Mono", monospace; font-size: 9px; font-weight: 400; }
+.syntax-field .writing-input { min-height: 122px; margin: 8px 0 0; font-size: 16px; }
+.field-feedback { display: flex; align-items: flex-start; gap: 5px; margin-top: 7px; font-size: 11px; font-weight: 400; line-height: 1.4; }
+.field-feedback.is-valid { color: #548064; }
+.field-feedback.is-invalid { color: #a45f4b; }
 .writing-input { display: block; width: 100%; min-height: 110px; resize: vertical; margin: 21px 0 10px; padding: 16px; border: 1px solid #ded9ce; border-radius: 8px; outline: 0; color: #3a3832; background: #fffdf9; font-family: "Fraunces", serif; font-size: 19px; line-height: 1.5; }
 .writing-input:focus { border-color: #9fb6a4; box-shadow: 0 0 0 3px #dce8df; }
 .panel-actions { display: flex; align-items: center; justify-content: space-between; }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AudioLines, BookOpenText, Check, Clock3, Mic2, Play, RotateCcw, Settings2, Sparkles } from "lucide-react";
 import { checkOllama, type OllamaStatus } from "./lib/ollama";
+import { validateComplex, validateCompound, type SyntaxResult } from "./lib/syntax";
 
 type PracticeArea = "Writing" | "Speaking" | "Pronunciation";
 
@@ -12,10 +13,9 @@ const practiceAreas: { label: PracticeArea; icon: typeof BookOpenText }[] = [
 
 function App() {
   const [activeArea, setActiveArea] = useState<PracticeArea>("Writing");
-  const [draft, setDraft] = useState(
-    "Although I had prepared my ideas, I was speaking too quickly and my main point got lost.",
-  );
-  const [isAnalyzed, setIsAnalyzed] = useState(false);
+  const [compound, setCompound] = useState("I prepared my ideas, and I practiced them aloud.");
+  const [complex, setComplex] = useState("Although I prepared my ideas, I practiced them aloud.");
+  const [syntaxFeedback, setSyntaxFeedback] = useState<{ compound: SyntaxResult; complex: SyntaxResult } | null>(null);
   const [isRecording, setIsRecording] = useState(false);
   const [ollamaStatus, setOllamaStatus] = useState<OllamaStatus>("checking");
 
@@ -82,21 +82,37 @@ function App() {
                 <div>
                   <p className="eyebrow accent">Writing clarity</p>
                   <h2>Give your ideas room to breathe.</h2>
-                  <p className="muted">Write naturally. Cadence will look for compound and complex structures without rewriting your voice.</p>
+                  <p className="muted">Build both structures from today’s word, then get a local grammar check without rewriting your voice.</p>
                 </div>
                 <span className="local-badge"><span className="status-dot" /> On-device analysis</span>
               </div>
-              <textarea className="writing-input" value={draft} onChange={(event) => { setDraft(event.target.value); setIsAnalyzed(false); }} aria-label="Writing practice" />
+              <div className="word-of-day">
+                <span className="card-label">Word of the day</span>
+                <strong>cadence</strong>
+                <span>/ˈkeɪdəns/ · the rhythm or flow of speech</span>
+              </div>
+              <div className="syntax-fields">
+                <label className="syntax-field">
+                  <span><b>01</b> Compound sentence <small>two independent clauses</small></span>
+                  <textarea className="writing-input" value={compound} onChange={(event) => { setCompound(event.target.value); setSyntaxFeedback(null); }} aria-label="Compound sentence" aria-invalid={syntaxFeedback?.compound.valid === false} />
+                  {syntaxFeedback && <span className={`field-feedback ${syntaxFeedback.compound.valid ? "is-valid" : "is-invalid"}`} role={syntaxFeedback.compound.valid ? undefined : "alert"}>{syntaxFeedback.compound.valid && <Check size={14} />}{syntaxFeedback.compound.message}</span>}
+                </label>
+                <label className="syntax-field">
+                  <span><b>02</b> Complex sentence <small>independent + dependent clause</small></span>
+                  <textarea className="writing-input" value={complex} onChange={(event) => { setComplex(event.target.value); setSyntaxFeedback(null); }} aria-label="Complex sentence" aria-invalid={syntaxFeedback?.complex.valid === false} />
+                  {syntaxFeedback && <span className={`field-feedback ${syntaxFeedback.complex.valid ? "is-valid" : "is-invalid"}`} role={syntaxFeedback.complex.valid ? undefined : "alert"}>{syntaxFeedback.complex.valid && <Check size={14} />}{syntaxFeedback.complex.message}</span>}
+                </label>
+              </div>
               <div className="panel-actions">
-                <span className="word-count">{draft.trim().split(/\s+/).filter(Boolean).length} words</span>
-                <button className="primary-button" onClick={() => setIsAnalyzed(true)}>
+                <span className="word-count">{compound.trim().split(/\s+/).filter(Boolean).length + complex.trim().split(/\s+/).filter(Boolean).length} words total</span>
+                <button className="primary-button" onClick={() => setSyntaxFeedback({ compound: validateCompound(compound), complex: validateComplex(complex) })}>
                   <Sparkles size={17} /> Analyze sentence
                 </button>
               </div>
-              {isAnalyzed && (
+              {syntaxFeedback?.compound.valid && syntaxFeedback.complex.valid && (
                 <div className="feedback-card">
-                  <div className="feedback-title"><Check size={17} /> Strong structure detected</div>
-                  <p>Your opening clause sets context before the main idea. Try a brief pause after “ideas” to make the contrast easier to follow.</p>
+                  <div className="feedback-title"><Check size={17} /> Strong structures detected</div>
+                  <p>Your clauses are connected clearly. Try reading both sentences once with a deliberate pause at each punctuation mark.</p>
                 </div>
               )}
             </section>
