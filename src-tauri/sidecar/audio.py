@@ -4,6 +4,7 @@ import re
 from concurrent.futures import ThreadPoolExecutor
 from functools import lru_cache
 from threading import Lock
+from pathlib import Path
 import numpy as np
 import soundfile as sf
 from pronunciation import attention_items
@@ -15,7 +16,7 @@ FILLERS = re.compile(r'\b(um|uh|like|you know|sort of|basically|actually|kind of
 @lru_cache(maxsize=1)
 def whisper():
     from faster_whisper import WhisperModel
-    return WhisperModel(os.environ.get('CADENCE_WHISPER_MODEL', 'models/whisper-base.en'), device='cpu', compute_type='int8', local_files_only=True)
+    return WhisperModel(os.environ.get('CADENCE_WHISPER_MODEL', str(Path(__file__).resolve().parents[2] / 'models/whisper-base.en')), device='cpu', compute_type='int8', local_files_only=True)
 
 def transcribe(samples):
     with MODEL_LOCK:

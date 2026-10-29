@@ -11,6 +11,8 @@ def dictionary():
 def fallback():
     # g2p_en otherwise downloads NLTK resources during import. Require provisioning.
     import nltk
+    from pathlib import Path
+    nltk.data.path.insert(0, str(Path(__file__).resolve().parents[2] / "models/nltk_data"))
     for resource in ('corpora/cmudict', 'taggers/averaged_perceptron_tagger', 'taggers/averaged_perceptron_tagger_eng'):
         nltk.data.find(resource)
     from g2p_en import G2p

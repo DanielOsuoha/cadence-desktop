@@ -83,7 +83,7 @@ async def analyze_audio(request: Request):
     files = []; fields = {}
     def field(item): fields[item.field_name.decode()] = (item.value or b'').decode()
     def file(item):
-        item.file_object.seek(0); files.append(item.file_object.read()); item.close()
+        item.file_object.seek(0); files.append(item.file_object.read())
     try:
         content_type, options = parse_options_header(request.headers.get('content-type', ''))
         if content_type != b'multipart/form-data' or b'boundary' not in options:

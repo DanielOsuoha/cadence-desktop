@@ -16,3 +16,6 @@ models/
 *.pt
 *.pth
 
+.pytest_cache/
+*.wav
+*.aiff

@@ -1,44 +1,8 @@
-export type OllamaStatus = "checking" | "available" | "offline";
-
-type OllamaTagsResponse = {
-  models?: Array<{ name: string }>;
-};
-
-type OllamaGenerateResponse = {
-  response?: string;
-};
-
-const OLLAMA_URL = "http://localhost:11434";
+export type OllamaStatus = 'checking' | 'available' | 'offline';
 
 export async function checkOllama(signal?: AbortSignal): Promise<boolean> {
-  const response = await fetch(`${OLLAMA_URL}/api/tags`, { signal });
-  return response.ok;
-}
-
-export async function generateLocalFeedback(prompt: string, signal?: AbortSignal): Promise<string> {
-  const response = await fetch(`${OLLAMA_URL}/api/generate`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      model: "llama3:8b",
-      prompt,
-      stream: false,
-      format: "json",
-    }),
-    signal,
-  });
-
-  if (!response.ok) {
-    throw new Error(`Ollama returned HTTP ${response.status}`);
-  }
-
-  const body = (await response.json()) as OllamaGenerateResponse;
-  if (!body.response) {
-    throw new Error("Ollama returned an empty response");
-  }
-  return body.response;
-}
-
-export function getModelNames(body: OllamaTagsResponse): string[] {
-  return (body.models ?? []).map((model) => model.name);
+  const response = await fetch('http://localhost:11434/api/tags', { signal });
+  if (!response.ok) return false;
+  const body = await response.json() as { models?: Array<{ name: string }> };
+  return (body.models ?? []).some(model => model.name === 'llama3:8b');
 }

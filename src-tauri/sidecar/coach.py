@@ -24,9 +24,12 @@ Output: {"syntax_valid":true,"word_of_day_used_correctly":false,"glow":"'Althoug
 '''
 
 async def generate(prompt, system):
+    model = os.environ.get('CADENCE_OLLAMA_MODEL', 'llama3:8b')
+    if 'cloud' in model.lower():
+        raise ValueError('Only local models are allowed.')
     async with httpx.AsyncClient(timeout=120, trust_env=False) as client:
         response = await client.post('http://127.0.0.1:11434/api/generate', json={
-            'model': os.environ.get('CADENCE_OLLAMA_MODEL', 'llama3:8b'),
+            'model': model,
             'prompt': json.dumps(prompt), 'system': system, 'format': 'json',
             'stream': False, 'options': {'temperature': 0}})
         response.raise_for_status()
