@@ -4,7 +4,7 @@ Cadence is a macOS desktop app for improving grammar, pronunciation, intonation,
 
 ## Principles
 
-- 100% free inference through Ollama
+- Local audio models; writing inference through the configured Ollama service
 - Audio analysis remains local; writing feedback uses the configured Ollama model
 - Native desktop packaging through Tauri
 - Replaceable model adapters for grammar, speech recognition, and pronunciation analysis
@@ -21,10 +21,10 @@ The macOS desktop shell lives under `src-tauri/`. Rust and Xcode Command Line To
 
 ## Local services
 
-Cadence is designed to keep writing and audio on-device:
+Cadence separates local audio analysis from configured writing inference:
 
 - **Ollama** provides language-model feedback at `http://localhost:11434`. The current default is `kimi-k2.6:cloud`.
-- The Python sidecar will provide local transcription, pitch, pace, filler-word, and pronunciation metrics.
+- The Python sidecar provides local transcription, pitch, pace, filler-word, and pronunciation metrics.
 - Model weights and generated recordings are intentionally excluded from Git by `.gitignore`.
 
 If Ollama is not running, the writing and practice UI remains available and reports the connection state instead of failing silently.
@@ -66,7 +66,7 @@ model such as `llama3:8b` or `mistral:7b` if you want fully local writing feedba
 - `GET /api/daily-word?day=YYYY-MM-DD`: deterministic selection from 118 curated
   advanced-study words, with definitions, examples, and General American ARPABET.
   Dates supplied by the writing UI use the user's local calendar.
-- `POST /api/scenario`: optional Ollama scenario grounded in the curated word.
+- `POST /api/scenario`: optional Ollama scenario grounded in the curated word (Kimi cloud by default).
 - `POST /api/evaluate`: JSON `{compound, complex, word}`. Dependency checks and
   whole-word usage run before any coaching call. Structural failures return field
   errors; unavailable or invalid model output preserves the structural results.

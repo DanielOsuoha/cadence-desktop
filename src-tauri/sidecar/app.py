@@ -50,7 +50,7 @@ async def scenario(day: date | None = None):
             raise ValueError('Invalid scenario')
         return result
     except (httpx.HTTPError, ValueError, KeyError):
-        raise HTTPException(503, 'Scenario unavailable. Start Ollama and install the configured model; the curated word remains available.')
+        raise HTTPException(503, 'Scenario unavailable. Check Ollama and the configured model connection; the curated word remains available.')
 
 @app.post('/api/evaluate')
 async def evaluate(submission: Submission):
@@ -69,7 +69,7 @@ async def evaluate(submission: Submission):
         feedback = await coach.evaluate({'submission': submission.model_dump(), 'normalized': normalized, 'syntax_valid': True, 'spelling_flags': flags})
         return {**base, 'feedback': feedback, 'error': None}
     except (httpx.HTTPError, ValueError, KeyError):
-        return {**base, 'error': 'Syntax verified; coaching unavailable. Start Ollama with the configured model, or retry if its JSON response was invalid.'}
+        return {**base, 'error': 'Syntax verified; coaching unavailable. Check Ollama and the configured model connection, or retry if its JSON response was invalid.'}
 
 @app.post('/api/analyze-audio')
 async def analyze_audio(request: Request):

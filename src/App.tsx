@@ -100,9 +100,9 @@ function App() {
                 <div>
                   <p className="eyebrow accent">Writing clarity</p>
                   <h2>Give your ideas room to breathe.</h2>
-                  <p className="muted">Build both structures from today’s word, then get a local grammar check without rewriting your voice.</p>
+                  <p className="muted">Build both structures from today’s word, then get a local structure check and Kimi writing feedback.</p>
                 </div>
-                <span className="local-badge"><span className="status-dot" /> On-device analysis</span>
+                <span className="local-badge"><span className="status-dot" /> Local syntax · Cloud coaching</span>
               </div>
               <div className="word-of-day">
                 <span className="card-label">Word of the day</span>
@@ -110,7 +110,7 @@ function App() {
                 <span>{word ? `[${word.general_american_phonemes.join(' ')}] · ${word.part_of_speech} · ${word.definition}` : 'Start the Python sidecar to load the curated word bank.'}</span>
                 {word && <p>{word.sample_context}</p>}
                 {!word && <button onClick={() => void loadWord()}>Retry connection</button>}
-                {word && <button disabled={busy} onClick={async () => { setBusy(true); try { const result = await localRequest<{scenario: string}>('/api/scenario', { method: 'POST' }); setScenario(result.scenario); } catch(e) { setError(e instanceof Error ? e.message : 'Scenario unavailable'); } finally { setBusy(false); } }}>Generate a local scenario</button>}
+                {word && <button disabled={busy} onClick={async () => { setBusy(true); try { const result = await localRequest<{scenario: string}>('/api/scenario', { method: 'POST' }); setScenario(result.scenario); } catch(e) { setError(e instanceof Error ? e.message : 'Scenario unavailable'); } finally { setBusy(false); } }}>Generate a Kimi scenario</button>}
                 {scenario && <p>{scenario}</p>}
               </div>
               <div className="syntax-fields">
