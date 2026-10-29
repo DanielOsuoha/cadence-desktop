@@ -1,0 +1,1864 @@
+[
+  {
+    "word": "abate",
+    "part_of_speech": "verb",
+    "definition": "to become less intense",
+    "general_american_phonemes": [
+      "AH0",
+      "B",
+      "EY1",
+      "T"
+    ],
+    "sample_context": "The storm began to abate before dawn."
+  },
+  {
+    "word": "aberration",
+    "part_of_speech": "noun",
+    "definition": "a departure from what is normal",
+    "general_american_phonemes": [
+      "AE2",
+      "B",
+      "ER0",
+      "EY1",
+      "SH",
+      "AH0",
+      "N"
+    ],
+    "sample_context": "The unusual result was an aberration."
+  },
+  {
+    "word": "acquiesce",
+    "part_of_speech": "verb",
+    "definition": "to accept reluctantly without protest",
+    "general_american_phonemes": [
+      "AE2",
+      "K",
+      "W",
+      "IY0",
+      "EH1",
+      "S"
+    ],
+    "sample_context": "She refused to acquiesce in the unfair decision."
+  },
+  {
+    "word": "acrimonious",
+    "part_of_speech": "adjective",
+    "definition": "marked by bitterness or anger",
+    "general_american_phonemes": [
+      "AE2",
+      "K",
+      "R",
+      "AH0",
+      "M",
+      "OW1",
+      "N",
+      "IY0",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The debate became acrimonious."
+  },
+  {
+    "word": "adroit",
+    "part_of_speech": "adjective",
+    "definition": "skillful and resourceful",
+    "general_american_phonemes": [
+      "AH0",
+      "D",
+      "R",
+      "OY1",
+      "T"
+    ],
+    "sample_context": "Her adroit response resolved the dispute."
+  },
+  {
+    "word": "aesthetic",
+    "part_of_speech": "adjective",
+    "definition": "concerned with beauty or artistic taste",
+    "general_american_phonemes": [
+      "EH0",
+      "S",
+      "TH",
+      "EH1",
+      "T",
+      "IH0",
+      "K"
+    ],
+    "sample_context": "The design has aesthetic appeal."
+  },
+  {
+    "word": "affable",
+    "part_of_speech": "adjective",
+    "definition": "friendly and easy to talk to",
+    "general_american_phonemes": [
+      "AE1",
+      "F",
+      "AH0",
+      "B",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "Our affable host welcomed everyone."
+  },
+  {
+    "word": "alacrity",
+    "part_of_speech": "noun",
+    "definition": "cheerful readiness",
+    "general_american_phonemes": [
+      "AH0",
+      "L",
+      "AE1",
+      "K",
+      "R",
+      "AH0",
+      "T",
+      "IY0"
+    ],
+    "sample_context": "He accepted the assignment with alacrity."
+  },
+  {
+    "word": "alleviate",
+    "part_of_speech": "verb",
+    "definition": "to make suffering or difficulty less severe",
+    "general_american_phonemes": [
+      "AH0",
+      "L",
+      "IY1",
+      "V",
+      "IY0",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "The grant will alleviate financial pressure."
+  },
+  {
+    "word": "ambiguous",
+    "part_of_speech": "adjective",
+    "definition": "open to more than one interpretation",
+    "general_american_phonemes": [
+      "AE0",
+      "M",
+      "B",
+      "IH1",
+      "G",
+      "Y",
+      "UW0",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The ambiguous instructions confused us."
+  },
+  {
+    "word": "ambivalent",
+    "part_of_speech": "adjective",
+    "definition": "having conflicting feelings",
+    "general_american_phonemes": [
+      "AE0",
+      "M",
+      "B",
+      "IH1",
+      "V",
+      "AH0",
+      "L",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "She felt ambivalent about moving."
+  },
+  {
+    "word": "ameliorate",
+    "part_of_speech": "verb",
+    "definition": "to improve a difficult situation",
+    "general_american_phonemes": [
+      "AH0",
+      "M",
+      "IY1",
+      "L",
+      "Y",
+      "ER0",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "The policy could ameliorate working conditions."
+  },
+  {
+    "word": "anachronism",
+    "part_of_speech": "noun",
+    "definition": "something belonging to a different time",
+    "general_american_phonemes": [
+      "AH0",
+      "N",
+      "AE1",
+      "K",
+      "R",
+      "AH0",
+      "N",
+      "IH2",
+      "Z",
+      "AH0",
+      "M"
+    ],
+    "sample_context": "The typewriter seemed an anachronism."
+  },
+  {
+    "word": "analogous",
+    "part_of_speech": "adjective",
+    "definition": "comparable in certain respects",
+    "general_american_phonemes": [
+      "AH0",
+      "N",
+      "AE1",
+      "L",
+      "AH0",
+      "G",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The two cases are analogous."
+  },
+  {
+    "word": "anomaly",
+    "part_of_speech": "noun",
+    "definition": "something that differs from expectations",
+    "general_american_phonemes": [
+      "AH0",
+      "N",
+      "AA1",
+      "M",
+      "AH0",
+      "L",
+      "IY0"
+    ],
+    "sample_context": "Researchers investigated the anomaly."
+  },
+  {
+    "word": "antipathy",
+    "part_of_speech": "noun",
+    "definition": "a strong feeling of dislike",
+    "general_american_phonemes": [
+      "AE0",
+      "N",
+      "T",
+      "IH1",
+      "P",
+      "AH0",
+      "TH",
+      "IY0"
+    ],
+    "sample_context": "He expressed antipathy toward corruption."
+  },
+  {
+    "word": "apathy",
+    "part_of_speech": "noun",
+    "definition": "lack of interest or concern",
+    "general_american_phonemes": [
+      "AE1",
+      "P",
+      "AH0",
+      "TH",
+      "IY0"
+    ],
+    "sample_context": "Voter apathy weakened participation."
+  },
+  {
+    "word": "appease",
+    "part_of_speech": "verb",
+    "definition": "to calm by making concessions",
+    "general_american_phonemes": [
+      "AH0",
+      "P",
+      "IY1",
+      "Z"
+    ],
+    "sample_context": "The offer failed to appease critics."
+  },
+  {
+    "word": "arbitrary",
+    "part_of_speech": "adjective",
+    "definition": "based on personal choice rather than a consistent reason",
+    "general_american_phonemes": [
+      "AA1",
+      "R",
+      "B",
+      "AH0",
+      "T",
+      "R",
+      "EH2",
+      "R",
+      "IY0"
+    ],
+    "sample_context": "The arbitrary deadline frustrated staff."
+  },
+  {
+    "word": "arcane",
+    "part_of_speech": "adjective",
+    "definition": "understood by very few people",
+    "general_american_phonemes": [
+      "AA2",
+      "R",
+      "K",
+      "EY1",
+      "N"
+    ],
+    "sample_context": "The manual used arcane terminology."
+  },
+  {
+    "word": "articulate",
+    "part_of_speech": "adjective",
+    "definition": "able to express ideas clearly",
+    "general_american_phonemes": [
+      "AA0",
+      "R",
+      "T",
+      "IH1",
+      "K",
+      "Y",
+      "AH0",
+      "L",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "She is an articulate advocate."
+  },
+  {
+    "word": "ascertain",
+    "part_of_speech": "verb",
+    "definition": "to establish something with certainty",
+    "general_american_phonemes": [
+      "AE2",
+      "S",
+      "ER0",
+      "T",
+      "EY1",
+      "N"
+    ],
+    "sample_context": "We must ascertain the cause."
+  },
+  {
+    "word": "assiduous",
+    "part_of_speech": "adjective",
+    "definition": "showing sustained care and effort",
+    "general_american_phonemes": [
+      "AH0",
+      "S",
+      "IH1",
+      "D",
+      "W",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "His assiduous research uncovered the truth."
+  },
+  {
+    "word": "astute",
+    "part_of_speech": "adjective",
+    "definition": "showing perceptive judgment",
+    "general_american_phonemes": [
+      "AH0",
+      "S",
+      "T",
+      "UW1",
+      "T"
+    ],
+    "sample_context": "The investor made an astute decision."
+  },
+  {
+    "word": "augment",
+    "part_of_speech": "verb",
+    "definition": "to increase or supplement",
+    "general_american_phonemes": [
+      "AO0",
+      "G",
+      "M",
+      "EH1",
+      "N",
+      "T"
+    ],
+    "sample_context": "Volunteers augment the permanent staff."
+  },
+  {
+    "word": "austere",
+    "part_of_speech": "adjective",
+    "definition": "plain and without comforts",
+    "general_american_phonemes": [
+      "AO0",
+      "S",
+      "T",
+      "IH1",
+      "R"
+    ],
+    "sample_context": "The room was austere but clean."
+  },
+  {
+    "word": "banal",
+    "part_of_speech": "adjective",
+    "definition": "unoriginal and dull",
+    "general_american_phonemes": [
+      "B",
+      "AH0",
+      "N",
+      "AA1",
+      "L"
+    ],
+    "sample_context": "The speech relied on banal observations."
+  },
+  {
+    "word": "benevolent",
+    "part_of_speech": "adjective",
+    "definition": "kind and well meaning",
+    "general_american_phonemes": [
+      "B",
+      "AH0",
+      "N",
+      "EH1",
+      "V",
+      "AH0",
+      "L",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "A benevolent donor funded the library."
+  },
+  {
+    "word": "bolster",
+    "part_of_speech": "verb",
+    "definition": "to support or strengthen",
+    "general_american_phonemes": [
+      "B",
+      "OW1",
+      "L",
+      "S",
+      "T",
+      "ER0"
+    ],
+    "sample_context": "New evidence will bolster the argument."
+  },
+  {
+    "word": "candid",
+    "part_of_speech": "adjective",
+    "definition": "truthful and direct",
+    "general_american_phonemes": [
+      "K",
+      "AE1",
+      "N",
+      "D",
+      "AH0",
+      "D"
+    ],
+    "sample_context": "We had a candid conversation."
+  },
+  {
+    "word": "capricious",
+    "part_of_speech": "adjective",
+    "definition": "subject to sudden unpredictable changes",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "P",
+      "R",
+      "IH1",
+      "SH",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The capricious weather disrupted travel."
+  },
+  {
+    "word": "catalyst",
+    "part_of_speech": "noun",
+    "definition": "something that causes or accelerates change",
+    "general_american_phonemes": [
+      "K",
+      "AE1",
+      "T",
+      "AH0",
+      "L",
+      "AH0",
+      "S",
+      "T"
+    ],
+    "sample_context": "The discovery was a catalyst for reform."
+  },
+  {
+    "word": "caustic",
+    "part_of_speech": "adjective",
+    "definition": "harshly critical or sarcastic",
+    "general_american_phonemes": [
+      "K",
+      "AA1",
+      "S",
+      "T",
+      "IH0",
+      "K"
+    ],
+    "sample_context": "His caustic remarks offended colleagues."
+  },
+  {
+    "word": "coalesce",
+    "part_of_speech": "verb",
+    "definition": "to come together into a whole",
+    "general_american_phonemes": [
+      "K",
+      "OW2",
+      "AH0",
+      "L",
+      "EH1",
+      "S"
+    ],
+    "sample_context": "The ideas began to coalesce."
+  },
+  {
+    "word": "cogent",
+    "part_of_speech": "adjective",
+    "definition": "clear and convincing",
+    "general_american_phonemes": [
+      "K",
+      "OW1",
+      "JH",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "She presented a cogent argument."
+  },
+  {
+    "word": "coherent",
+    "part_of_speech": "adjective",
+    "definition": "logical and consistent",
+    "general_american_phonemes": [
+      "K",
+      "OW0",
+      "HH",
+      "IH1",
+      "R",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "The report offers a coherent explanation."
+  },
+  {
+    "word": "commensurate",
+    "part_of_speech": "adjective",
+    "definition": "proportionate in size or degree",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "M",
+      "EH1",
+      "N",
+      "S",
+      "ER0",
+      "AH0",
+      "T"
+    ],
+    "sample_context": "Pay should be commensurate with responsibility."
+  },
+  {
+    "word": "compelling",
+    "part_of_speech": "adjective",
+    "definition": "powerfully persuasive",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "M",
+      "P",
+      "EH1",
+      "L",
+      "IH0",
+      "NG"
+    ],
+    "sample_context": "They provided compelling evidence."
+  },
+  {
+    "word": "complacent",
+    "part_of_speech": "adjective",
+    "definition": "too satisfied to notice possible problems",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "M",
+      "P",
+      "L",
+      "EY1",
+      "S",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "Success made the team complacent."
+  },
+  {
+    "word": "conciliatory",
+    "part_of_speech": "adjective",
+    "definition": "intended to reduce hostility",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "N",
+      "S",
+      "IH1",
+      "L",
+      "IY2",
+      "AH0",
+      "T",
+      "AO2",
+      "R",
+      "IY0"
+    ],
+    "sample_context": "She adopted a conciliatory tone."
+  },
+  {
+    "word": "concur",
+    "part_of_speech": "verb",
+    "definition": "to agree",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "N",
+      "K",
+      "ER1"
+    ],
+    "sample_context": "The experts concur with the assessment."
+  },
+  {
+    "word": "conjecture",
+    "part_of_speech": "noun",
+    "definition": "an opinion based on incomplete evidence",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "N",
+      "JH",
+      "EH1",
+      "K",
+      "CH",
+      "ER0"
+    ],
+    "sample_context": "The explanation remains conjecture."
+  },
+  {
+    "word": "conscientious",
+    "part_of_speech": "adjective",
+    "definition": "careful and responsible",
+    "general_american_phonemes": [
+      "K",
+      "AA2",
+      "N",
+      "SH",
+      "IY0",
+      "EH1",
+      "N",
+      "SH",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "A conscientious editor checks every citation."
+  },
+  {
+    "word": "consensus",
+    "part_of_speech": "noun",
+    "definition": "general agreement",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "N",
+      "S",
+      "EH1",
+      "N",
+      "S",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The committee reached a consensus."
+  },
+  {
+    "word": "conspicuous",
+    "part_of_speech": "adjective",
+    "definition": "easily noticed",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "N",
+      "S",
+      "P",
+      "IH1",
+      "K",
+      "Y",
+      "UW0",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "His absence was conspicuous."
+  },
+  {
+    "word": "construe",
+    "part_of_speech": "verb",
+    "definition": "to interpret in a particular way",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "N",
+      "S",
+      "T",
+      "R",
+      "UW1"
+    ],
+    "sample_context": "Do not construe silence as approval."
+  },
+  {
+    "word": "contentious",
+    "part_of_speech": "adjective",
+    "definition": "likely to cause disagreement",
+    "general_american_phonemes": [
+      "K",
+      "AH0",
+      "N",
+      "T",
+      "EH1",
+      "N",
+      "SH",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "Funding remains a contentious issue."
+  },
+  {
+    "word": "corroborate",
+    "part_of_speech": "verb",
+    "definition": "to confirm with additional evidence",
+    "general_american_phonemes": [
+      "K",
+      "ER0",
+      "AA1",
+      "B",
+      "ER0",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "The records corroborate her account."
+  },
+  {
+    "word": "credulous",
+    "part_of_speech": "adjective",
+    "definition": "too ready to believe others",
+    "general_american_phonemes": [
+      "K",
+      "R",
+      "EH1",
+      "JH",
+      "AH0",
+      "L",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "Credulous readers accepted the rumor."
+  },
+  {
+    "word": "cursory",
+    "part_of_speech": "adjective",
+    "definition": "quick and insufficiently thorough",
+    "general_american_phonemes": [
+      "K",
+      "ER1",
+      "S",
+      "ER0",
+      "IY0"
+    ],
+    "sample_context": "A cursory review missed several errors."
+  },
+  {
+    "word": "debilitating",
+    "part_of_speech": "adjective",
+    "definition": "seriously weakening",
+    "general_american_phonemes": [
+      "D",
+      "AH0",
+      "B",
+      "IH1",
+      "L",
+      "AH0",
+      "T",
+      "EY2",
+      "T",
+      "IH0",
+      "NG"
+    ],
+    "sample_context": "The illness caused debilitating fatigue."
+  },
+  {
+    "word": "deference",
+    "part_of_speech": "noun",
+    "definition": "respectful submission to another's judgment",
+    "general_american_phonemes": [
+      "D",
+      "EH1",
+      "F",
+      "ER0",
+      "AH0",
+      "N",
+      "S"
+    ],
+    "sample_context": "He listened with deference."
+  },
+  {
+    "word": "delineate",
+    "part_of_speech": "verb",
+    "definition": "to describe or mark out precisely",
+    "general_american_phonemes": [
+      "D",
+      "IH0",
+      "L",
+      "IH1",
+      "N",
+      "IY0",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "The agreement will delineate our responsibilities."
+  },
+  {
+    "word": "demur",
+    "part_of_speech": "verb",
+    "definition": "to raise an objection",
+    "general_american_phonemes": [
+      "D",
+      "IH0",
+      "M",
+      "ER1"
+    ],
+    "sample_context": "She chose to demur at the proposal."
+  },
+  {
+    "word": "denigrate",
+    "part_of_speech": "verb",
+    "definition": "to criticize unfairly",
+    "general_american_phonemes": [
+      "D",
+      "EH1",
+      "N",
+      "AH0",
+      "G",
+      "R",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "Do not denigrate their contributions."
+  },
+  {
+    "word": "derivative",
+    "part_of_speech": "adjective",
+    "definition": "unoriginal and based on another source",
+    "general_american_phonemes": [
+      "D",
+      "ER0",
+      "IH1",
+      "V",
+      "AH0",
+      "T",
+      "IH0",
+      "V"
+    ],
+    "sample_context": "Critics found the novel derivative."
+  },
+  {
+    "word": "despondent",
+    "part_of_speech": "adjective",
+    "definition": "deeply discouraged",
+    "general_american_phonemes": [
+      "D",
+      "IH0",
+      "S",
+      "P",
+      "AA1",
+      "N",
+      "D",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "He felt despondent after the rejection."
+  },
+  {
+    "word": "dichotomy",
+    "part_of_speech": "noun",
+    "definition": "a division into two contrasting groups",
+    "general_american_phonemes": [
+      "D",
+      "AY0",
+      "K",
+      "AA1",
+      "T",
+      "AH0",
+      "M",
+      "IY0"
+    ],
+    "sample_context": "The essay questions that dichotomy."
+  },
+  {
+    "word": "diffident",
+    "part_of_speech": "adjective",
+    "definition": "lacking confidence in oneself",
+    "general_american_phonemes": [
+      "D",
+      "IH1",
+      "F",
+      "IH0",
+      "D",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "The diffident student hesitated to speak."
+  },
+  {
+    "word": "diligent",
+    "part_of_speech": "adjective",
+    "definition": "showing careful persistent effort",
+    "general_american_phonemes": [
+      "D",
+      "IH1",
+      "L",
+      "IH0",
+      "JH",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "Diligent preparation improved her performance."
+  },
+  {
+    "word": "discerning",
+    "part_of_speech": "adjective",
+    "definition": "showing good judgment",
+    "general_american_phonemes": [
+      "D",
+      "IH0",
+      "S",
+      "ER1",
+      "N",
+      "IH0",
+      "NG"
+    ],
+    "sample_context": "Discerning readers noticed the inconsistency."
+  },
+  {
+    "word": "discrepancy",
+    "part_of_speech": "noun",
+    "definition": "a difference between things expected to agree",
+    "general_american_phonemes": [
+      "D",
+      "IH0",
+      "S",
+      "K",
+      "R",
+      "EH1",
+      "P",
+      "AH0",
+      "N",
+      "S",
+      "IY0"
+    ],
+    "sample_context": "The audit revealed a discrepancy."
+  },
+  {
+    "word": "disparate",
+    "part_of_speech": "adjective",
+    "definition": "fundamentally different",
+    "general_american_phonemes": [
+      "D",
+      "IH1",
+      "S",
+      "P",
+      "ER0",
+      "IH0",
+      "T"
+    ],
+    "sample_context": "The project united disparate interests."
+  },
+  {
+    "word": "disseminate",
+    "part_of_speech": "verb",
+    "definition": "to spread information widely",
+    "general_american_phonemes": [
+      "D",
+      "IH0",
+      "S",
+      "EH1",
+      "M",
+      "AH0",
+      "N",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "Libraries disseminate reliable information."
+  },
+  {
+    "word": "efficacy",
+    "part_of_speech": "noun",
+    "definition": "the ability to produce a desired result",
+    "general_american_phonemes": [
+      "EH1",
+      "F",
+      "IH0",
+      "K",
+      "AE2",
+      "S",
+      "IY0"
+    ],
+    "sample_context": "The trial measured the treatment's efficacy."
+  },
+  {
+    "word": "elucidate",
+    "part_of_speech": "verb",
+    "definition": "to explain clearly",
+    "general_american_phonemes": [
+      "IH0",
+      "L",
+      "UW1",
+      "S",
+      "AH0",
+      "D",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "The diagram helps elucidate the process."
+  },
+  {
+    "word": "empirical",
+    "part_of_speech": "adjective",
+    "definition": "based on observation or experiment",
+    "general_american_phonemes": [
+      "EH2",
+      "M",
+      "P",
+      "IH1",
+      "R",
+      "IH0",
+      "K",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "The claim requires empirical evidence."
+  },
+  {
+    "word": "emulate",
+    "part_of_speech": "verb",
+    "definition": "to strive to match an admired example",
+    "general_american_phonemes": [
+      "EH1",
+      "M",
+      "Y",
+      "AH0",
+      "L",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "Young athletes emulate their heroes."
+  },
+  {
+    "word": "enigmatic",
+    "part_of_speech": "adjective",
+    "definition": "difficult to understand or interpret",
+    "general_american_phonemes": [
+      "EH2",
+      "N",
+      "IH0",
+      "G",
+      "M",
+      "AE1",
+      "T",
+      "IH0",
+      "K"
+    ],
+    "sample_context": "Her reply was enigmatic."
+  },
+  {
+    "word": "ephemeral",
+    "part_of_speech": "adjective",
+    "definition": "lasting a very short time",
+    "general_american_phonemes": [
+      "IH0",
+      "F",
+      "EH1",
+      "M",
+      "ER0",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "Online fame can be ephemeral."
+  },
+  {
+    "word": "equanimity",
+    "part_of_speech": "noun",
+    "definition": "calmness under pressure",
+    "general_american_phonemes": [
+      "IY2",
+      "K",
+      "W",
+      "AH0",
+      "N",
+      "IH1",
+      "M",
+      "IH0",
+      "T",
+      "IY0"
+    ],
+    "sample_context": "She faced the setback with equanimity."
+  },
+  {
+    "word": "equivocal",
+    "part_of_speech": "adjective",
+    "definition": "unclear or open to conflicting interpretations",
+    "general_american_phonemes": [
+      "IH0",
+      "K",
+      "W",
+      "IH1",
+      "V",
+      "AH0",
+      "K",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "The evidence remains equivocal."
+  },
+  {
+    "word": "erudite",
+    "part_of_speech": "adjective",
+    "definition": "having extensive scholarly knowledge",
+    "general_american_phonemes": [
+      "EH1",
+      "R",
+      "AH0",
+      "D",
+      "AY2",
+      "T"
+    ],
+    "sample_context": "The erudite lecturer welcomed questions."
+  },
+  {
+    "word": "esoteric",
+    "part_of_speech": "adjective",
+    "definition": "understood by a small specialized group",
+    "general_american_phonemes": [
+      "EH2",
+      "S",
+      "AH0",
+      "T",
+      "EH1",
+      "R",
+      "IH0",
+      "K"
+    ],
+    "sample_context": "The lecture covered esoteric concepts."
+  },
+  {
+    "word": "exacerbate",
+    "part_of_speech": "verb",
+    "definition": "to make a problem worse",
+    "general_american_phonemes": [
+      "IH0",
+      "G",
+      "Z",
+      "AE1",
+      "S",
+      "ER0",
+      "B",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "Delays will exacerbate the shortage."
+  },
+  {
+    "word": "exemplary",
+    "part_of_speech": "adjective",
+    "definition": "worthy of imitation",
+    "general_american_phonemes": [
+      "IH0",
+      "G",
+      "Z",
+      "EH1",
+      "M",
+      "P",
+      "L",
+      "ER0",
+      "IY0"
+    ],
+    "sample_context": "Her conduct was exemplary."
+  },
+  {
+    "word": "expedient",
+    "part_of_speech": "adjective",
+    "definition": "convenient though possibly unprincipled",
+    "general_american_phonemes": [
+      "IH0",
+      "K",
+      "S",
+      "P",
+      "IY1",
+      "D",
+      "IY0",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "Silence seemed politically expedient."
+  },
+  {
+    "word": "explicit",
+    "part_of_speech": "adjective",
+    "definition": "stated clearly and directly",
+    "general_american_phonemes": [
+      "IH0",
+      "K",
+      "S",
+      "P",
+      "L",
+      "IH1",
+      "S",
+      "AH0",
+      "T"
+    ],
+    "sample_context": "The contract gives explicit instructions."
+  },
+  {
+    "word": "fastidious",
+    "part_of_speech": "adjective",
+    "definition": "very attentive to detail and accuracy",
+    "general_american_phonemes": [
+      "F",
+      "AE0",
+      "S",
+      "T",
+      "IH1",
+      "D",
+      "IY0",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The fastidious researcher checked every measurement."
+  },
+  {
+    "word": "fortuitous",
+    "part_of_speech": "adjective",
+    "definition": "happening by chance",
+    "general_american_phonemes": [
+      "F",
+      "AO0",
+      "R",
+      "T",
+      "UW1",
+      "IH0",
+      "T",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "A fortuitous meeting led to collaboration."
+  },
+  {
+    "word": "frugal",
+    "part_of_speech": "adjective",
+    "definition": "careful in using money or resources",
+    "general_american_phonemes": [
+      "F",
+      "R",
+      "UW1",
+      "G",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "Their frugal habits reduced waste."
+  },
+  {
+    "word": "gregarious",
+    "part_of_speech": "adjective",
+    "definition": "sociable and fond of company",
+    "general_american_phonemes": [
+      "G",
+      "R",
+      "AH0",
+      "G",
+      "EH1",
+      "R",
+      "IY0",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "Our gregarious neighbor organized the party."
+  },
+  {
+    "word": "impasse",
+    "part_of_speech": "noun",
+    "definition": "a situation in which progress is blocked",
+    "general_american_phonemes": [
+      "IH2",
+      "M",
+      "P",
+      "AE1",
+      "S"
+    ],
+    "sample_context": "Negotiations reached an impasse."
+  },
+  {
+    "word": "implicit",
+    "part_of_speech": "adjective",
+    "definition": "suggested without being stated directly",
+    "general_american_phonemes": [
+      "IH2",
+      "M",
+      "P",
+      "L",
+      "IH1",
+      "S",
+      "AH0",
+      "T"
+    ],
+    "sample_context": "The invitation carried an implicit promise."
+  },
+  {
+    "word": "inadvertent",
+    "part_of_speech": "adjective",
+    "definition": "unintentional",
+    "general_american_phonemes": [
+      "IH2",
+      "N",
+      "AH0",
+      "D",
+      "V",
+      "ER1",
+      "T",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "An inadvertent omission caused confusion."
+  },
+  {
+    "word": "incongruous",
+    "part_of_speech": "adjective",
+    "definition": "out of place or inconsistent",
+    "general_american_phonemes": [
+      "IH2",
+      "NG",
+      "K",
+      "AO1",
+      "NG",
+      "R",
+      "UW0",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The joke felt incongruous at the ceremony."
+  },
+  {
+    "word": "inevitable",
+    "part_of_speech": "adjective",
+    "definition": "certain to happen",
+    "general_american_phonemes": [
+      "IH2",
+      "N",
+      "EH1",
+      "V",
+      "AH0",
+      "T",
+      "AH0",
+      "B",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "Some delay was inevitable."
+  },
+  {
+    "word": "infer",
+    "part_of_speech": "verb",
+    "definition": "to reach a conclusion from evidence",
+    "general_american_phonemes": [
+      "IH2",
+      "N",
+      "F",
+      "ER1"
+    ],
+    "sample_context": "We can infer a trend from these figures."
+  },
+  {
+    "word": "ingenuous",
+    "part_of_speech": "adjective",
+    "definition": "innocent and straightforward",
+    "general_american_phonemes": [
+      "IH2",
+      "N",
+      "JH",
+      "EH1",
+      "N",
+      "Y",
+      "UW0",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "His ingenuous question surprised us."
+  },
+  {
+    "word": "inherent",
+    "part_of_speech": "adjective",
+    "definition": "existing as an essential quality",
+    "general_american_phonemes": [
+      "IH0",
+      "N",
+      "HH",
+      "IH1",
+      "R",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "Every investment carries inherent risk."
+  },
+  {
+    "word": "innovative",
+    "part_of_speech": "adjective",
+    "definition": "introducing useful new ideas",
+    "general_american_phonemes": [
+      "IH1",
+      "N",
+      "AH0",
+      "V",
+      "EY2",
+      "T",
+      "IH0",
+      "V"
+    ],
+    "sample_context": "The team proposed an innovative solution."
+  },
+  {
+    "word": "insidious",
+    "part_of_speech": "adjective",
+    "definition": "gradually harmful in a subtle way",
+    "general_american_phonemes": [
+      "IH2",
+      "N",
+      "S",
+      "IH1",
+      "D",
+      "IY2",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "Misinformation has insidious effects."
+  },
+  {
+    "word": "judicious",
+    "part_of_speech": "adjective",
+    "definition": "showing careful good judgment",
+    "general_american_phonemes": [
+      "JH",
+      "UW0",
+      "D",
+      "IH1",
+      "SH",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "Judicious planning saved resources."
+  },
+  {
+    "word": "laconic",
+    "part_of_speech": "adjective",
+    "definition": "using very few words",
+    "general_american_phonemes": [
+      "L",
+      "AA0",
+      "K",
+      "AA1",
+      "N",
+      "IH0",
+      "K"
+    ],
+    "sample_context": "His laconic reply ended the discussion."
+  },
+  {
+    "word": "lucid",
+    "part_of_speech": "adjective",
+    "definition": "clear and easy to understand",
+    "general_american_phonemes": [
+      "L",
+      "UW1",
+      "S",
+      "AH0",
+      "D"
+    ],
+    "sample_context": "She gave a lucid explanation."
+  },
+  {
+    "word": "magnanimous",
+    "part_of_speech": "adjective",
+    "definition": "generous toward a rival or weaker person",
+    "general_american_phonemes": [
+      "M",
+      "AE0",
+      "G",
+      "N",
+      "AE1",
+      "N",
+      "AH0",
+      "M",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The winner was magnanimous in victory."
+  },
+  {
+    "word": "meticulous",
+    "part_of_speech": "adjective",
+    "definition": "extremely careful and precise",
+    "general_american_phonemes": [
+      "M",
+      "AH0",
+      "T",
+      "IH1",
+      "K",
+      "Y",
+      "AH0",
+      "L",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "Meticulous records supported the findings."
+  },
+  {
+    "word": "mitigate",
+    "part_of_speech": "verb",
+    "definition": "to reduce severity or harm",
+    "general_american_phonemes": [
+      "M",
+      "IH1",
+      "T",
+      "AH0",
+      "G",
+      "EY2",
+      "T"
+    ],
+    "sample_context": "Trees help mitigate urban heat."
+  },
+  {
+    "word": "nuance",
+    "part_of_speech": "noun",
+    "definition": "a subtle difference in meaning or expression",
+    "general_american_phonemes": [
+      "N",
+      "UW1",
+      "AA0",
+      "N",
+      "S"
+    ],
+    "sample_context": "The translation preserved every nuance."
+  },
+  {
+    "word": "obstinate",
+    "part_of_speech": "adjective",
+    "definition": "stubbornly refusing to change",
+    "general_american_phonemes": [
+      "AA1",
+      "B",
+      "S",
+      "T",
+      "AH0",
+      "N",
+      "AH0",
+      "T"
+    ],
+    "sample_context": "His obstinate refusal stalled negotiations."
+  },
+  {
+    "word": "opaque",
+    "part_of_speech": "adjective",
+    "definition": "difficult to understand or see through",
+    "general_american_phonemes": [
+      "OW0",
+      "P",
+      "EY1",
+      "K"
+    ],
+    "sample_context": "The policy was written in opaque language."
+  },
+  {
+    "word": "paradox",
+    "part_of_speech": "noun",
+    "definition": "an apparent contradiction that may reveal truth",
+    "general_american_phonemes": [
+      "P",
+      "EH1",
+      "R",
+      "AH0",
+      "D",
+      "AA2",
+      "K",
+      "S"
+    ],
+    "sample_context": "The finding presents a paradox."
+  },
+  {
+    "word": "perfunctory",
+    "part_of_speech": "adjective",
+    "definition": "done with minimal care or interest",
+    "general_american_phonemes": [
+      "P",
+      "ER0",
+      "F",
+      "AH1",
+      "NG",
+      "K",
+      "T",
+      "ER0",
+      "IY0"
+    ],
+    "sample_context": "He offered a perfunctory apology."
+  },
+  {
+    "word": "pragmatic",
+    "part_of_speech": "adjective",
+    "definition": "focused on practical results",
+    "general_american_phonemes": [
+      "P",
+      "R",
+      "AE0",
+      "G",
+      "M",
+      "AE1",
+      "T",
+      "IH0",
+      "K"
+    ],
+    "sample_context": "We need a pragmatic approach."
+  },
+  {
+    "word": "precocious",
+    "part_of_speech": "adjective",
+    "definition": "developing abilities unusually early",
+    "general_american_phonemes": [
+      "P",
+      "R",
+      "IH0",
+      "K",
+      "OW1",
+      "SH",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The precocious child read advanced novels."
+  },
+  {
+    "word": "prescient",
+    "part_of_speech": "adjective",
+    "definition": "showing knowledge of events before they happen",
+    "general_american_phonemes": [
+      "P",
+      "R",
+      "EH1",
+      "S",
+      "IY0",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "Her warning proved prescient."
+  },
+  {
+    "word": "prolific",
+    "part_of_speech": "adjective",
+    "definition": "producing much work or many results",
+    "general_american_phonemes": [
+      "P",
+      "R",
+      "OW0",
+      "L",
+      "IH1",
+      "F",
+      "IH0",
+      "K"
+    ],
+    "sample_context": "The prolific author published annually."
+  },
+  {
+    "word": "prudent",
+    "part_of_speech": "adjective",
+    "definition": "careful about future consequences",
+    "general_american_phonemes": [
+      "P",
+      "R",
+      "UW1",
+      "D",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "Saving a reserve is prudent."
+  },
+  {
+    "word": "reconcile",
+    "part_of_speech": "verb",
+    "definition": "to bring into agreement",
+    "general_american_phonemes": [
+      "R",
+      "EH1",
+      "K",
+      "AH0",
+      "N",
+      "S",
+      "AY2",
+      "L"
+    ],
+    "sample_context": "We must reconcile the conflicting accounts."
+  },
+  {
+    "word": "resilient",
+    "part_of_speech": "adjective",
+    "definition": "able to recover after difficulty",
+    "general_american_phonemes": [
+      "R",
+      "IH0",
+      "Z",
+      "IH1",
+      "L",
+      "Y",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "The resilient community rebuilt quickly."
+  },
+  {
+    "word": "reticent",
+    "part_of_speech": "adjective",
+    "definition": "reluctant to reveal thoughts or feelings",
+    "general_american_phonemes": [
+      "R",
+      "EH1",
+      "T",
+      "IH0",
+      "S",
+      "AH0",
+      "N",
+      "T"
+    ],
+    "sample_context": "She was reticent about her plans."
+  },
+  {
+    "word": "scrupulous",
+    "part_of_speech": "adjective",
+    "definition": "careful to act honestly and accurately",
+    "general_american_phonemes": [
+      "S",
+      "K",
+      "R",
+      "UW1",
+      "P",
+      "Y",
+      "AH0",
+      "L",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The auditor was scrupulous in checking accounts."
+  },
+  {
+    "word": "succinct",
+    "part_of_speech": "adjective",
+    "definition": "brief and clearly expressed",
+    "general_american_phonemes": [
+      "S",
+      "AH0",
+      "K",
+      "S",
+      "IH1",
+      "NG",
+      "K",
+      "T"
+    ],
+    "sample_context": "His succinct summary captured the issue."
+  },
+  {
+    "word": "tenacious",
+    "part_of_speech": "adjective",
+    "definition": "persisting firmly despite difficulty",
+    "general_american_phonemes": [
+      "T",
+      "AH0",
+      "N",
+      "EY1",
+      "SH",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "The tenacious advocate pursued reform."
+  },
+  {
+    "word": "ubiquitous",
+    "part_of_speech": "adjective",
+    "definition": "present almost everywhere",
+    "general_american_phonemes": [
+      "Y",
+      "UW0",
+      "B",
+      "IH1",
+      "K",
+      "W",
+      "IH0",
+      "T",
+      "AH0",
+      "S"
+    ],
+    "sample_context": "Mobile devices are ubiquitous."
+  },
+  {
+    "word": "unequivocal",
+    "part_of_speech": "adjective",
+    "definition": "clear and leaving no doubt",
+    "general_american_phonemes": [
+      "AH2",
+      "N",
+      "IH0",
+      "K",
+      "W",
+      "IH1",
+      "V",
+      "AH0",
+      "K",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "The committee gave unequivocal support."
+  },
+  {
+    "word": "viable",
+    "part_of_speech": "adjective",
+    "definition": "capable of working successfully",
+    "general_american_phonemes": [
+      "V",
+      "AY1",
+      "AH0",
+      "B",
+      "AH0",
+      "L"
+    ],
+    "sample_context": "We developed a viable alternative."
+  },
+  {
+    "word": "vindicate",
+    "part_of_speech": "verb",
+    "definition": "to clear from blame or prove correct",
+    "general_american_phonemes": [
+      "V",
+      "IH1",
+      "N",
+      "D",
+      "AH0",
+      "K",
+      "EY0",
+      "T"
+    ],
+    "sample_context": "The evidence will vindicate her judgment."
+  }
+]
