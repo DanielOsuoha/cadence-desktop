@@ -63,7 +63,7 @@ h2 { margin-bottom: 10px; font-family: "Fraunces", Georgia, serif; font-size: 28
 .feedback-card p { margin: 5px 0 0; }
 .feedback-title { display: flex; align-items: center; gap: 7px; font-weight: 700; }
 .prompt-card { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; padding: 20px; border-radius: 9px; background: #efebe1; }
-.prompt-card span { color: #a0714d; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.prompt-card span { color: #805432; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
 .prompt-card strong { max-width: 600px; font-family: "Fraunces", Georgia, serif; font-size: 22px; font-weight: 500; }
 .recording-area { display: flex; align-items: center; gap: 15px; }
 .record-orb { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; color: #29443b; background: #dce8df; }

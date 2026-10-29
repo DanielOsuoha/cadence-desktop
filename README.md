@@ -102,6 +102,6 @@ feedback validation, pronunciation confidence boundaries, timestamps, and multip
 uploads larger than the normal spooling threshold with temporary-file creation blocked.
 Whisper and coaching are stubbed in unit tests; real-model checks require provisioning.
 
-The current history/streak cards are still display placeholders. This implementation
-adds the four audited analysis pillars; persistent history and the full timed gauntlet
-remain separate work.
+The UI displays real session-only writing and recording counts. Persistent history
+and the full timed gauntlet remain separate work. Speaking includes topic selection
+and a scratchpad; recordings show a live two-minute countdown.
