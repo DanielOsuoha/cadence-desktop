@@ -3,6 +3,12 @@ from pathlib import Path
 import subprocess
 import sys
 import nltk
+import ssl
+import certifi
+
+# Python.org macOS installs may not have a configured system CA bundle.
+# Keep certificate verification enabled using the installed certifi bundle.
+ssl._create_default_https_context = lambda: ssl.create_default_context(cafile=certifi.where())
 from huggingface_hub import snapshot_download
 
 ROOT = Path(__file__).resolve().parents[2]

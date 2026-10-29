@@ -91,3 +91,21 @@ def test_pronunciation():
 
 def test_origin():
  assert client.get('/api/health',headers={'Origin':'https://evil.example'}).status_code==403
+
+def test_ollama_json_transport(monkeypatch):
+ import asyncio
+ import httpx
+ real_client = httpx.AsyncClient
+ def handler(request):
+  assert str(request.url) == 'http://127.0.0.1:11434/api/generate'
+  payload = json.loads(request.content)
+  assert payload['format'] == 'json' and payload['stream'] is False
+  return httpx.Response(200,json={'response':json.dumps({'scenario':'Discuss how evidence can bolster a proposal.'})})
+ monkeypatch.setattr(coach.httpx,'AsyncClient',lambda **kwargs:real_client(transport=httpx.MockTransport(handler),**kwargs))
+ result=asyncio.run(coach.generate({'word':'bolster'},'Return a JSON scenario.'))
+ assert 'bolster' in result['scenario']
+
+def test_schema_rejects_out_of_range_and_extra_fields():
+ good=dict(syntax_valid=True,word_of_day_used_correctly=True,glow='A',grow='B',american_polish='C',vocabulary_score=8)
+ for bad in [{**good,'vocabulary_score':11},{**good,'syntax_valid':'true'},{**good,'unexpected':'field'}]:
+  with pytest.raises(ValueError): coach.Feedback.model_validate(bad)
