@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AudioLines, BookOpenText, Check, Clock3, Mic2, Play, RotateCcw, Settings2, Sparkles } from "lucide-react";
+import { checkOllama, type OllamaStatus } from "./lib/ollama";
 
 type PracticeArea = "Writing" | "Speaking" | "Pronunciation";
 
@@ -16,6 +17,18 @@ function App() {
   );
   const [isAnalyzed, setIsAnalyzed] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
+  const [ollamaStatus, setOllamaStatus] = useState<OllamaStatus>("checking");
+
+  useEffect(() => {
+    const controller = new AbortController();
+    checkOllama(controller.signal)
+      .then((available) => setOllamaStatus(available ? "available" : "offline"))
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setOllamaStatus("offline");
+      });
+    return () => controller.abort();
+  }, []);
 
   return (
     <main className="app-shell">
@@ -41,8 +54,8 @@ function App() {
 
         <div className="sidebar-footer">
           <div className="local-status">
-            <span className="status-dot" />
-            <span>Local mode</span>
+            <span className={`status-dot ${ollamaStatus === "available" ? "is-ready" : ""}`} />
+            <span>{ollamaStatus === "available" ? "Ollama ready" : ollamaStatus === "checking" ? "Checking local models" : "Local mode"}</span>
           </div>
           <button className="settings-button" aria-label="Open settings">
             <Settings2 size={18} />
