@@ -11,4 +11,4 @@ snapshot_download('Systran/faster-whisper-base.en', local_dir=ROOT / 'models/whi
 for resource in ('cmudict', 'averaged_perceptron_tagger', 'averaged_perceptron_tagger_eng'):
     if not nltk.download(resource, download_dir=str(ROOT / 'models/nltk_data')):
         raise RuntimeError(f'Could not provision {resource}')
-print('Speech resources ready. Provision the coach separately with: ollama pull llama3:8b')
+print('Speech resources ready. Provision the coach separately with: ollama pull kimi-k2.6:cloud')

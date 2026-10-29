@@ -73,7 +73,7 @@ function App() {
         <div className="sidebar-footer">
           <div className="local-status">
             <span className={`status-dot ${ollamaStatus === "available" ? "is-ready" : ""}`} />
-            <span>{ollamaStatus === "available" ? "Ollama ready" : ollamaStatus === "checking" ? "Checking local models" : "Local mode"}</span>
+            <span>{ollamaStatus === "available" ? "Kimi via Ollama" : ollamaStatus === "checking" ? "Checking Ollama" : "Ollama offline"}</span>
           </div>
           <button className="settings-button" aria-label="Open settings">
             <Settings2 size={18} />

@@ -1,11 +1,11 @@
 # Cadence
 
-Cadence is a local-first macOS desktop app for improving grammar, pronunciation, intonation, and impromptu public speaking.
+Cadence is a macOS desktop app for improving grammar, pronunciation, intonation, and impromptu public speaking.
 
 ## Principles
 
-- 100% free and local-only inference
-- No audio or writing data leaves the device
+- 100% free inference through Ollama
+- Audio analysis remains local; writing feedback uses the configured Ollama model
 - Native desktop packaging through Tauri
 - Replaceable model adapters for grammar, speech recognition, and pronunciation analysis
 
@@ -23,7 +23,7 @@ The macOS desktop shell lives under `src-tauri/`. Rust and Xcode Command Line To
 
 Cadence is designed to keep writing and audio on-device:
 
-- **Ollama** provides optional local language-model feedback at `http://localhost:11434`.
+- **Ollama** provides language-model feedback at `http://localhost:11434`. The current default is `kimi-k2.6:cloud`.
 - The Python sidecar will provide local transcription, pitch, pace, filler-word, and pronunciation metrics.
 - Model weights and generated recordings are intentionally excluded from Git by `.gitignore`.
 
@@ -37,12 +37,12 @@ From the repository root (Python 3.10+; tested with Python 3.13 on Apple Silicon
 python3 -m venv .venv
 .venv/bin/pip install -r src-tauri/sidecar/requirements.txt
 .venv/bin/python src-tauri/sidecar/provision.py
-ollama pull llama3:8b
+ollama pull kimi-k2.6:cloud
 ```
 
-Provisioning downloads public packages and model weights once. Analysis never downloads
-models or sends writing/audio to a cloud model. Model weights stay in ignored `models/`
-and Ollama's local storage. Allow several GB of disk space for Llama.
+Provisioning downloads public packages once. Audio analysis stays local. With
+`kimi-k2.6:cloud`, writing feedback is sent through Ollama Cloud; use a local model
+instead if that privacy boundary is not acceptable.
 
 In separate terminals:
 
@@ -57,8 +57,8 @@ Tauri sidecar executable. Native microphone permission is declared in `src-tauri
 Allow microphone access when macOS prompts. Audio is limited to two minutes in the UI.
 
 `CADENCE_WHISPER_MODEL` can point to another provisioned faster-whisper directory.
-`CADENCE_OLLAMA_MODEL` defaults to `llama3:8b`; use a locally installed model such as
-`mistral:7b`. Cloud models are rejected. The sidebar checks for the default Llama model.
+`CADENCE_OLLAMA_MODEL` defaults to `kimi-k2.6:cloud`. Set it to a locally installed
+model such as `llama3:8b` or `mistral:7b` if you want fully local writing feedback.
 
 ## Analysis contract
 
