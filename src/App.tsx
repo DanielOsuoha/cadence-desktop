@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { AudioLines, BookOpenText, Check, Clock3, Mic2, Play, RotateCcw, Settings2, Sparkles } from "lucide-react";
 import { checkOllama, type OllamaStatus } from "./lib/ollama";
-import { validateComplex, validateCompound, type SyntaxResult } from "./lib/syntax";
+import { evaluate, localRequest, type Word, type Evaluation, type SyntaxResult } from "./lib/sidecar";
+import { AudioPractice } from "./components/AudioPractice";
 
 type PracticeArea = "Writing" | "Speaking" | "Pronunciation";
 
@@ -16,7 +17,24 @@ function App() {
   const [compound, setCompound] = useState("I prepared my ideas, and I practiced them aloud.");
   const [complex, setComplex] = useState("Although I prepared my ideas, I practiced them aloud.");
   const [syntaxFeedback, setSyntaxFeedback] = useState<{ compound: SyntaxResult; complex: SyntaxResult } | null>(null);
-  const [isRecording, setIsRecording] = useState(false);
+  const [word, setWord] = useState<Word | null>(null);
+  const [evaluation, setEvaluation] = useState<Evaluation | null>(null);
+  const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [scenario, setScenario] = useState('');
+  const loadWord = () => {
+    const now = new Date();
+    const day = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    return localRequest<Word>(`/api/daily-word?day=${day}`).then(value => { setWord(value); setError(''); }).catch(e => setError(e.message));
+  };
+  useEffect(() => { void loadWord(); }, []);
+  const analyzeWriting = async () => {
+    if (!word) return;
+    setBusy(true); setError(''); setEvaluation(null);
+    try { const result = await evaluate(compound, complex, word.word); setSyntaxFeedback(result.syntax); setEvaluation(result); }
+    catch (e) { setError(e instanceof Error ? e.message : 'Analysis failed.'); }
+    finally { setBusy(false); }
+  };
   const [ollamaStatus, setOllamaStatus] = useState<OllamaStatus>("checking");
 
   useEffect(() => {
@@ -66,7 +84,7 @@ function App() {
       <section className="workspace">
         <header className="topbar">
           <div>
-            <p className="eyebrow">Tuesday, October 28</p>
+            <p className="eyebrow">{new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
             <h1>Good evening, Daniel.</h1>
           </div>
           <div className="streak">
@@ -88,33 +106,41 @@ function App() {
               </div>
               <div className="word-of-day">
                 <span className="card-label">Word of the day</span>
-                <strong>cadence</strong>
-                <span>/ˈkeɪdəns/ · the rhythm or flow of speech</span>
+                <strong>{word?.word ?? 'Local vocabulary unavailable'}</strong>
+                <span>{word ? `[${word.general_american_phonemes.join(' ')}] · ${word.part_of_speech} · ${word.definition}` : 'Start the Python sidecar to load the curated word bank.'}</span>
+                {word && <p>{word.sample_context}</p>}
+                {!word && <button onClick={() => void loadWord()}>Retry connection</button>}
+                {word && <button disabled={busy} onClick={async () => { setBusy(true); try { const result = await localRequest<{scenario: string}>('/api/scenario', { method: 'POST' }); setScenario(result.scenario); } catch(e) { setError(e instanceof Error ? e.message : 'Scenario unavailable'); } finally { setBusy(false); } }}>Generate a local scenario</button>}
+                {scenario && <p>{scenario}</p>}
               </div>
               <div className="syntax-fields">
                 <label className="syntax-field">
                   <span><b>01</b> Compound sentence <small>two independent clauses</small></span>
-                  <textarea className="writing-input" value={compound} onChange={(event) => { setCompound(event.target.value); setSyntaxFeedback(null); }} aria-label="Compound sentence" aria-invalid={syntaxFeedback?.compound.valid === false} />
-                  {syntaxFeedback && <span className={`field-feedback ${syntaxFeedback.compound.valid ? "is-valid" : "is-invalid"}`} role={syntaxFeedback.compound.valid ? undefined : "alert"}>{syntaxFeedback.compound.valid && <Check size={14} />}{syntaxFeedback.compound.message}</span>}
+                  <textarea className="writing-input" disabled={busy} value={compound} onChange={(event) => { setCompound(event.target.value); setSyntaxFeedback(null); setEvaluation(null); }} aria-label="Compound sentence" aria-describedby="compound-feedback" aria-invalid={syntaxFeedback?.compound.valid === false} />
+                  {syntaxFeedback && <span id="compound-feedback" className={`field-feedback ${syntaxFeedback.compound.valid ? "is-valid" : "is-invalid"}`} role={syntaxFeedback.compound.valid ? undefined : "alert"}>{syntaxFeedback.compound.valid && <Check size={14} />}{syntaxFeedback.compound.message}</span>}
                 </label>
                 <label className="syntax-field">
                   <span><b>02</b> Complex sentence <small>independent + dependent clause</small></span>
-                  <textarea className="writing-input" value={complex} onChange={(event) => { setComplex(event.target.value); setSyntaxFeedback(null); }} aria-label="Complex sentence" aria-invalid={syntaxFeedback?.complex.valid === false} />
-                  {syntaxFeedback && <span className={`field-feedback ${syntaxFeedback.complex.valid ? "is-valid" : "is-invalid"}`} role={syntaxFeedback.complex.valid ? undefined : "alert"}>{syntaxFeedback.complex.valid && <Check size={14} />}{syntaxFeedback.complex.message}</span>}
+                  <textarea className="writing-input" disabled={busy} value={complex} onChange={(event) => { setComplex(event.target.value); setSyntaxFeedback(null); setEvaluation(null); }} aria-label="Complex sentence" aria-describedby="complex-feedback" aria-invalid={syntaxFeedback?.complex.valid === false} />
+                  {syntaxFeedback && <span id="complex-feedback" className={`field-feedback ${syntaxFeedback.complex.valid ? "is-valid" : "is-invalid"}`} role={syntaxFeedback.complex.valid ? undefined : "alert"}>{syntaxFeedback.complex.valid && <Check size={14} />}{syntaxFeedback.complex.message}</span>}
                 </label>
               </div>
               <div className="panel-actions">
                 <span className="word-count">{compound.trim().split(/\s+/).filter(Boolean).length + complex.trim().split(/\s+/).filter(Boolean).length} words total</span>
-                <button className="primary-button" onClick={() => setSyntaxFeedback({ compound: validateCompound(compound), complex: validateComplex(complex) })}>
+                <button className="primary-button" disabled={busy || !word} onClick={() => void analyzeWriting()}>
                   <Sparkles size={17} /> Analyze sentence
                 </button>
               </div>
-              {syntaxFeedback?.compound.valid && syntaxFeedback.complex.valid && (
-                <div className="feedback-card">
-                  <div className="feedback-title"><Check size={17} /> Strong structures detected</div>
-                  <p>Your clauses are connected clearly. Try reading both sentences once with a deliberate pause at each punctuation mark.</p>
-                </div>
-              )}
+              {error && <p role="alert">{error}</p>}
+              {evaluation?.error && <p role="alert">{evaluation.error}</p>}
+              {evaluation?.spelling_flags.map((flag, i) => <p key={i}>American spelling: {flag.original} → {flag.replacement}</p>)}
+              {evaluation?.feedback && <div className="feedback-card" aria-live="polite">
+                <p><b>Glow:</b> {evaluation.feedback.glow}</p>
+                <p><b>Grow:</b> {evaluation.feedback.grow}</p>
+                <p><b>American polish:</b> {evaluation.feedback.american_polish}</p>
+                <p>Vocabulary: {evaluation.feedback.vocabulary_score}/10 · {evaluation.feedback.word_of_day_used_correctly ? 'Appropriate usage' : 'Review word usage'}</p>
+              </div>}
+              <AudioPractice targets={word ? [word.word] : []} />
             </section>
           )}
 
@@ -129,13 +155,7 @@ function App() {
                 <div className="timer"><Clock3 size={16} /> 02:00</div>
               </div>
               <div className="prompt-card"><span>Today's prompt</span><strong>What is a small habit that has changed the way you think?</strong></div>
-              <div className="recording-area">
-                <div className={`record-orb ${isRecording ? "is-recording" : ""}`}><Mic2 size={26} /></div>
-                <button className="record-button" onClick={() => setIsRecording((current) => !current)}>
-                  {isRecording ? "Stop recording" : "Start recording"}
-                </button>
-                <span>{isRecording ? "Listening locally…" : "Your recording stays on this device."}</span>
-              </div>
+              <AudioPractice targets={word ? [word.word] : []} />
             </section>
           )}
 
@@ -149,6 +169,7 @@ function App() {
                 </div>
                 <button className="reset-button"><RotateCcw size={15} /> New set</button>
               </div>
+              <AudioPractice targets={["particularly", "comfortable", "opportunity"]} />
               <div className="pronunciation-list">
                 {["particularly", "comfortable", "opportunity"].map((word, index) => (
                   <div className="pronunciation-row" key={word}>
