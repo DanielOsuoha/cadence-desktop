@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AudioLines, BookOpenText, Mic2, Settings2, Sparkles } from "lucide-react";
+import { AudioLines, BookOpenText, Check, Clock3, Mic2, Play, RotateCcw, Settings2, Sparkles } from "lucide-react";
 
 type PracticeArea = "Writing" | "Speaking" | "Pronunciation";
 
@@ -11,6 +11,11 @@ const practiceAreas: { label: PracticeArea; icon: typeof BookOpenText }[] = [
 
 function App() {
   const [activeArea, setActiveArea] = useState<PracticeArea>("Writing");
+  const [draft, setDraft] = useState(
+    "Although I had prepared my ideas, I was speaking too quickly and my main point got lost.",
+  );
+  const [isAnalyzed, setIsAnalyzed] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
 
   return (
     <main className="app-shell">
@@ -58,24 +63,75 @@ function App() {
         </header>
 
         <div className="content">
-          <section className="welcome-card">
-            <div>
-              <p className="eyebrow accent">Your next session</p>
-              <h2>Find your natural rhythm.</h2>
-              <p className="muted">
-                A short, focused exercise to make your ideas clearer and your voice more confident.
-              </p>
-              <button className="primary-button">
-                <Sparkles size={17} />
-                Begin {activeArea.toLowerCase()} practice
-              </button>
-            </div>
-            <div className="waveform" aria-hidden="true">
-              {[28, 44, 32, 58, 38, 72, 46, 86, 54, 38, 62, 42, 76, 48, 30].map((height, index) => (
-                <span key={index} style={{ height: `${height}%` }} />
-              ))}
-            </div>
-          </section>
+          {activeArea === "Writing" && (
+            <section className="practice-panel">
+              <div className="panel-heading">
+                <div>
+                  <p className="eyebrow accent">Writing clarity</p>
+                  <h2>Give your ideas room to breathe.</h2>
+                  <p className="muted">Write naturally. Cadence will look for compound and complex structures without rewriting your voice.</p>
+                </div>
+                <span className="local-badge"><span className="status-dot" /> On-device analysis</span>
+              </div>
+              <textarea className="writing-input" value={draft} onChange={(event) => { setDraft(event.target.value); setIsAnalyzed(false); }} aria-label="Writing practice" />
+              <div className="panel-actions">
+                <span className="word-count">{draft.trim().split(/\s+/).filter(Boolean).length} words</span>
+                <button className="primary-button" onClick={() => setIsAnalyzed(true)}>
+                  <Sparkles size={17} /> Analyze sentence
+                </button>
+              </div>
+              {isAnalyzed && (
+                <div className="feedback-card">
+                  <div className="feedback-title"><Check size={17} /> Strong structure detected</div>
+                  <p>Your opening clause sets context before the main idea. Try a brief pause after “ideas” to make the contrast easier to follow.</p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {activeArea === "Speaking" && (
+            <section className="practice-panel">
+              <div className="panel-heading">
+                <div>
+                  <p className="eyebrow accent">Impromptu speaking</p>
+                  <h2>Take a moment. Then make it yours.</h2>
+                  <p className="muted">You have two minutes to respond. There is no perfect answer—only a clear beginning, middle, and end.</p>
+                </div>
+                <div className="timer"><Clock3 size={16} /> 02:00</div>
+              </div>
+              <div className="prompt-card"><span>Today's prompt</span><strong>What is a small habit that has changed the way you think?</strong></div>
+              <div className="recording-area">
+                <div className={`record-orb ${isRecording ? "is-recording" : ""}`}><Mic2 size={26} /></div>
+                <button className="record-button" onClick={() => setIsRecording((current) => !current)}>
+                  {isRecording ? "Stop recording" : "Start recording"}
+                </button>
+                <span>{isRecording ? "Listening locally…" : "Your recording stays on this device."}</span>
+              </div>
+            </section>
+          )}
+
+          {activeArea === "Pronunciation" && (
+            <section className="practice-panel">
+              <div className="panel-heading">
+                <div>
+                  <p className="eyebrow accent">General American</p>
+                  <h2>Make every syllable intentional.</h2>
+                  <p className="muted">Practice the sounds that matter most for your next conversation.</p>
+                </div>
+                <button className="reset-button"><RotateCcw size={15} /> New set</button>
+              </div>
+              <div className="pronunciation-list">
+                {["particularly", "comfortable", "opportunity"].map((word, index) => (
+                  <div className="pronunciation-row" key={word}>
+                    <span className="word-index">0{index + 1}</span>
+                    <strong>{word}</strong>
+                    <span className="phonetic">/{["pərˈtɪkjələrli", "ˈkʌmftərbəl", "ˌɑpərˈtunəti"][index]}/</span>
+                    <button className="play-button" aria-label={`Play ${word}`} onClick={() => window.speechSynthesis?.speak(new SpeechSynthesisUtterance(word))}><Play size={14} fill="currentColor" /></button>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className="section-heading">
             <div>
@@ -118,4 +174,3 @@ function App() {
 }
 
 export default App;
-

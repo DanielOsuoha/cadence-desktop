@@ -33,14 +33,37 @@ h2 { margin-bottom: 10px; font-family: "Fraunces", serif; font-size: 28px; font-
 .streak { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: #8c8a83; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .streak-number { color: #cb7057; font-size: 19px; letter-spacing: -.04em; }
 .content { max-width: 900px; margin: 0 auto; padding: 20px 7vw 70px; }
-.welcome-card { display: flex; min-height: 280px; justify-content: space-between; overflow: hidden; padding: 38px 42px; border-radius: 14px; color: #f4f1e9; background: #29443b; box-shadow: 0 13px 30px #29443b1c; }
-.welcome-card h2 { max-width: 300px; margin-bottom: 12px; color: #f4f1e9; font-size: 36px; }
-.muted { max-width: 360px; margin-bottom: 27px; color: #bdc9c0; font-size: 14px; line-height: 1.55; }
+.practice-panel { min-height: 280px; padding: 34px 38px; border: 1px solid #e1ddd2; border-radius: 14px; background: #f9f7f2; box-shadow: 0 13px 30px #29443b0b; }
+.panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; }
+.practice-panel h2 { max-width: 430px; margin-bottom: 10px; font-size: 32px; }
+.muted { max-width: 470px; margin-bottom: 22px; color: #77766f; font-size: 14px; line-height: 1.55; }
 .accent { color: #d3a66b; }
-.primary-button { display: inline-flex; align-items: center; gap: 9px; padding: 12px 17px; border: 0; border-radius: 7px; color: #263d36; background: #e9c78e; font-size: 13px; font-weight: 700; cursor: pointer; }
+.primary-button { display: inline-flex; align-items: center; gap: 9px; padding: 12px 17px; border: 0; border-radius: 7px; color: #f4f1e9; background: #29443b; font-size: 13px; font-weight: 700; cursor: pointer; }
 .primary-button:hover { background: #f1d4a3; }
-.waveform { display: flex; align-items: center; gap: 7px; width: 180px; margin: 22px 4px 0 30px; opacity: .8; }
-.waveform span { width: 4px; min-height: 10px; border-radius: 4px; background: #d3a66b; }
+.local-badge, .timer { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 6px; color: #668170; background: #e6eee7; font-family: "DM Mono", monospace; font-size: 10px; white-space: nowrap; }
+.local-badge .status-dot { width: 6px; height: 6px; box-shadow: none; }
+.writing-input { display: block; width: 100%; min-height: 110px; resize: vertical; margin: 21px 0 10px; padding: 16px; border: 1px solid #ded9ce; border-radius: 8px; outline: 0; color: #3a3832; background: #fffdf9; font-family: "Fraunces", serif; font-size: 19px; line-height: 1.5; }
+.writing-input:focus { border-color: #9fb6a4; box-shadow: 0 0 0 3px #dce8df; }
+.panel-actions { display: flex; align-items: center; justify-content: space-between; }
+.word-count, .recording-area > span, .phonetic { color: #9a978e; font-family: "DM Mono", monospace; font-size: 10px; }
+.feedback-card { margin-top: 20px; padding: 13px 15px; border-left: 3px solid #6c9878; border-radius: 0 7px 7px 0; color: #526457; background: #e8f0e9; font-size: 13px; line-height: 1.45; }
+.feedback-card p { margin: 5px 0 0; }
+.feedback-title { display: flex; align-items: center; gap: 7px; font-weight: 700; }
+.prompt-card { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; padding: 20px; border-radius: 9px; background: #efebe1; }
+.prompt-card span { color: #a0714d; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.prompt-card strong { max-width: 600px; font-family: "Fraunces", serif; font-size: 22px; font-weight: 500; }
+.recording-area { display: flex; align-items: center; gap: 15px; }
+.record-orb { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; color: #29443b; background: #dce8df; }
+.record-orb.is-recording { color: #fff; background: #c56d57; animation: pulse 1.4s ease-in-out infinite; }
+.record-button, .reset-button { display: inline-flex; align-items: center; gap: 7px; padding: 10px 13px; border: 1px solid #d5d1c7; border-radius: 7px; color: #4a4942; background: transparent; font-size: 12px; cursor: pointer; }
+.record-button:hover, .reset-button:hover { background: #efebe1; }
+.pronunciation-list { margin-top: 18px; border-top: 1px solid #e1ddd2; }
+.pronunciation-row { display: grid; grid-template-columns: 35px 1.4fr 1.5fr 32px; align-items: center; gap: 10px; padding: 17px 0; border-bottom: 1px solid #e1ddd2; }
+.word-index { color: #b0aca1; font-family: "DM Mono", monospace; font-size: 10px; }
+.pronunciation-row strong { font-family: "Fraunces", serif; font-size: 20px; font-weight: 500; }
+.play-button { display: grid; width: 28px; height: 28px; place-items: center; padding: 0; border: 0; border-radius: 50%; color: #29443b; background: #dce8df; cursor: pointer; }
+.play-button:hover { background: #bed6c5; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 8px #c56d572b; } }
 .section-heading { display: flex; align-items: end; justify-content: space-between; margin: 54px 0 20px; }
 .section-heading h2 { margin: 0; font-size: 24px; }
 .text-button { padding: 0 0 4px; border: 0; border-bottom: 1px solid #aaa79e; color: #77766f; background: transparent; font-size: 12px; cursor: pointer; }
